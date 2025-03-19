@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, FileText, Github, Mail, MapPin, Send } from 'lucide-react';
+import { Linkedin, FileText, Github, Mail, MapPin, Send, BookOpen, GraduationCap, BookMarked } from 'lucide-react';
 
 const ContactSection = () => {
   const [formState, setFormState] = useState({
@@ -40,7 +40,7 @@ const ContactSection = () => {
   
   const socialLinks = [{
     name: 'ORCID',
-    icon: <FileText className="w-5 h-5" />,
+    icon: <GraduationCap className="w-5 h-5" />,
     url: 'https://orcid.org/0009-0008-2460-805X',
     username: '0009-0008-2460-805X',
     color: 'bg-gradient-to-r from-neon-green to-neon-blue'
@@ -52,13 +52,13 @@ const ContactSection = () => {
     color: 'bg-gradient-to-r from-neon-purple to-neon-blue'
   }, {
     name: 'ResearchGate',
-    icon: <FileText className="w-5 h-5" />,
+    icon: <BookMarked className="w-5 h-5" />,
     url: 'https://www.researchgate.net/profile/Manoj-Aryal',
     username: 'manojaryal',
     color: 'bg-gradient-to-r from-neon-green to-neon-blue'
   }, {
     name: 'Google Scholar',
-    icon: <FileText className="w-5 h-5" />,
+    icon: <BookOpen className="w-5 h-5" />,
     url: 'https://scholar.google.com/citations?user=manojaryal',
     username: 'manojaryal',
     color: 'bg-gradient-to-r from-neon-blue to-neon-green'

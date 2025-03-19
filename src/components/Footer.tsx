@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Github, Linkedin, Twitter, FileText } from 'lucide-react';
+import { Github, Linkedin, BookOpen, GraduationCap, BookMarked } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,11 +20,14 @@ const Footer = () => {
             <a href="https://linkedin.com/in/maryalnp" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="https://twitter.com/maryalnp" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
-              <Twitter className="w-5 h-5" />
+            <a href="https://www.researchgate.net/profile/Manoj-Aryal" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
+              <BookMarked className="w-5 h-5" />
             </a>
             <a href="https://scholar.google.com/citations?user=manojaryal" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
-              <FileText className="w-5 h-5" />
+              <BookOpen className="w-5 h-5" />
+            </a>
+            <a href="https://orcid.org/0009-0008-2460-805X" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
+              <GraduationCap className="w-5 h-5" />
             </a>
           </div>
           
