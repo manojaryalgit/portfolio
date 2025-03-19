@@ -4,10 +4,10 @@
   "installCommand": "npm install",
   "framework": "vite",
   "outputDirectory": "dist",
-  "builds": [
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/node"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 } 
