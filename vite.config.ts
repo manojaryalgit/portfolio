@@ -25,9 +25,9 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: [],
       output: {
-        manualChunks: undefined
+        manualChunks: undefined,
+        inlineDynamicImports: true
       }
     },
     commonjsOptions: {
@@ -38,6 +38,10 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    minify: 'esbuild'
+    minify: 'esbuild',
+    modulePreload: {
+      polyfill: false
+    },
+    cssCodeSplit: false
   }
 });
