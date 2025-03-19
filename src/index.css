@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 224 35% 10%; /* Dark blue background */
+    --foreground: 0 0% 98%;
+
+    --card: 224 35% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 224 35% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 315 90% 65%; /* Vibrant pink */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 224 35% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 224 35% 20%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 265 90% 65%; /* Purple accent */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 224 35% 20%;
+    --input: 224 35% 20%;
+    --ring: 315 90% 65%;
+
+    --radius: 0.75rem;
+    
+    /* Custom color variables */
+    --neon-blue: 190 100% 50%;
+    --neon-pink: 315 90% 65%;
+    --neon-purple: 265 90% 65%;
+    --neon-green: 150 75% 60%;
+  }
+  
+  * {
+    @apply border-border selection:bg-pink-500/20 selection:text-white;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased font-inter overflow-x-hidden;
+    font-size: 16px; /* Increased base font size */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-space-grotesk;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-pink-500/30 rounded-full hover:bg-pink-500/50 transition-colors;
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply text-3xl sm:text-4xl font-bold mb-4 neon-text;
+  }
+  
+  .text-gradient-red {
+    @apply bg-gradient-to-r from-red-500 to-rose-400 text-transparent bg-clip-text;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-[hsl(var(--neon-blue))] via-[hsl(var(--neon-purple))] to-[hsl(var(--neon-pink))] text-transparent bg-clip-text;
+  }
+  
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-lg;
+  }
+  
+  .red-border {
+    @apply border border-white/10 hover:border-pink-500/80 transition-colors;
+  }
+  
+  .red-glow {
+    @apply shadow-[0_0_15px_rgba(236,72,153,0.5)];
+  }
+  
+  .primary-button {
+    @apply px-6 py-3 bg-pink-950/50 border border-pink-500/50 text-white hover:border-[hsl(var(--neon-blue))]/80 hover:bg-pink-950/70 transition-all duration-300;
+  }
+  
+  .section-container {
+    @apply py-16 md:py-24;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-[0_0_20px_rgba(236,72,153,0.3)] transition-all duration-300;
+  }
+  
+  .timeline-line {
+    @apply bg-gradient-to-b from-[hsl(var(--neon-blue))]/20 via-[hsl(var(--neon-purple))]/50 to-[hsl(var(--neon-pink))]/20;
+  }
+
+  .cyber-border {
+    @apply border border-white/10 rounded-lg overflow-hidden hover:border-pink-500/30 transition-all duration-300;
+  }
+  
+  .font-cyber {
+    @apply font-space-grotesk tracking-wide;
+  }
+  
+  .font-code {
+    @apply font-inter;
+  }
+  
+  .neon-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--neon-blue))] to-[hsl(var(--neon-pink))];
+  }
+  
+  .neon-blue {
+    @apply text-[hsl(var(--neon-blue))];
+  }
+  
+  .neon-pink {
+    @apply text-[hsl(var(--neon-pink))];
+  }
+  
+  .neon-purple {
+    @apply text-[hsl(var(--neon-purple))];
+  }
+  
+  .neon-green {
+    @apply text-[hsl(var(--neon-green))];
+  }
+  
+  .timeline-node {
+    @apply w-8 h-8 rounded-full bg-gradient-to-r from-[hsl(var(--neon-blue))] to-[hsl(var(--neon-pink))] border-4 border-background;
+  }
+  
+  .cyber-grid {
+    @apply absolute inset-0;
+    background-size: 30px 30px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    opacity: 0.2;
+  }
+  
+  .bg-cyber-dark {
+    @apply bg-background/80;
+  }
+  
+  .neon-circle {
+    @apply p-0.5 rounded-full bg-gradient-to-r from-[hsl(var(--neon-blue))] to-[hsl(var(--neon-pink))];
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -500px 0;
+    }
+    100% {
+      background-position: 500px 0;
+    }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background-size: 1000px 100%;
+  }
+  
+  .skill-orb {
+    @apply w-full aspect-square rounded-lg flex items-center justify-center transition-all duration-300 overflow-hidden;
+  }
+  
+  /* Enhanced cursor styles */
+  .cursor-dot {
+    @apply fixed rounded-full pointer-events-none z-[9999];
+    mix-blend-mode: screen;
+    filter: blur(1px) brightness(1.5);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .cursor-trail {
+    @apply fixed rounded-full pointer-events-none z-[9998];
+    mix-blend-mode: screen;
+    filter: blur(2px);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .icon-glow {
+    filter: drop-shadow(0 0 5px rgba(236,72,153,0.7));
+    transition: filter 0.3s ease;
+  }
+
+  .icon-glow:hover {
+    filter: drop-shadow(0 0 8px rgba(0,240,255,0.8));
+  }
+  
+  /* Flip card effects */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+  }
+  
+  /* Custom blur styles */
+  .blur-xl {
+    --tw-blur: blur(70px) !important;
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  }
+
+  /* Project card hover effects */
+  .project-card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .project-card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -15px rgba(0, 240, 255, 0.2);
+  }
+
+  .project-tech-tag {
+    @apply px-2 py-1 text-xs rounded-full bg-white/5 border border-white/10 text-white/80;
+    transition: all 0.3s ease;
+  }
+
+  .project-tech-tag:hover {
+    @apply border-[#00F0FF]/30 bg-white/10;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Disable cursor effects on touch devices */
+@media (hover: none) {
+  .cursor-dot,
+  .cursor-trail {
+    display: none !important;
+  }
+}
