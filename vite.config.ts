@@ -25,16 +25,6 @@ export default defineConfig({
   },
   base: '/',
   build: {
-    rollupOptions: {
-      output: {
-        manualChunks: undefined,
-        inlineDynamicImports: true
-      }
-    },
-    commonjsOptions: {
-      include: [/node_modules/],
-      extensions: ['.js', '.cjs']
-    },
     target: 'esnext',
     outDir: 'dist',
     assetsDir: 'assets',
@@ -43,6 +33,12 @@ export default defineConfig({
     modulePreload: {
       polyfill: false
     },
-    cssCodeSplit: false
+    cssCodeSplit: false,
+    rollupOptions: {
+      output: {
+        format: 'es',
+        inlineDynamicImports: true
+      }
+    }
   }
 });
