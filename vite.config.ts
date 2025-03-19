@@ -34,10 +34,9 @@ export default defineConfig({
       polyfill: false
     },
     cssCodeSplit: false,
-    rollupOptions: {
-      output: {
-        format: 'es',
-        inlineDynamicImports: true
+    esbuild: {
+      supported: {
+        'top-level-await': true
       }
     }
   }
