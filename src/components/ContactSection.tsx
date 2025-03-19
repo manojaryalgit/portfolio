@@ -89,7 +89,7 @@ const ContactSection = () => {
         duration: 0.6
       }}>
           <h2 className="section-heading">CONTACT ME</h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto"></div>
+          <div className="gradient-line"></div>
           <p className="mt-4 text-white/70 max-w-2xl mx-auto">
             Let's connect to discuss research opportunities, collaborations, or any questions about 
             my work in physics and data science.

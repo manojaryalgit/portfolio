@@ -78,7 +78,7 @@ const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-heading">EXPERIENCE</h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto"></div>
+          <div className="gradient-line"></div>
         </motion.div>
         
         <div ref={containerRef} className="relative max-w-3xl mx-auto">

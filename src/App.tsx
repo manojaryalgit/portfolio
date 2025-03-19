@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import { ThemeProvider } from 'next-themes';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
@@ -24,23 +25,25 @@ function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
-      <BackgroundEffect />
-      <div className="fixed inset-0 pointer-events-none z-[9999]">
-        <NeonCursorTrail />
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+      <div className="relative min-h-screen overflow-x-hidden">
+        <BackgroundEffect />
+        <div className="fixed inset-0 pointer-events-none z-[9999]">
+          <NeonCursorTrail />
+        </div>
+        <div className="relative z-10">
+          <Navigation />
+          <HeroSection />
+          <AboutSection />
+          <ProjectsSection />
+          <SkillsSection />
+          <ExperienceSection />
+          <EducationSection />
+          <ContactSection />
+          <Footer />
+        </div>
       </div>
-      <div className="relative z-10">
-        <Navigation />
-        <HeroSection />
-        <AboutSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <ExperienceSection />
-        <EducationSection />
-        <ContactSection />
-        <Footer />
-      </div>
-    </div>
+    </ThemeProvider>
   );
 }
 

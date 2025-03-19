@@ -86,7 +86,7 @@ const EducationSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-heading">EDUCATION</h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto"></div>
+          <div className="gradient-line"></div>
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

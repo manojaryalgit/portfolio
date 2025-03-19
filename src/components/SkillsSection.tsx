@@ -151,7 +151,7 @@ const SkillsSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-heading">TECHNICAL SKILLS</h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-[hsl(var(--neon-blue))] via-[hsl(var(--neon-purple))] to-[hsl(var(--neon-pink))] mx-auto"></div>
+          <div className="gradient-line"></div>
           <p className="mt-4 text-white/80 max-w-2xl mx-auto">
             Specialized in machine learning, data science, and physics simulation with expertise in various programming languages and tools.
           </p>

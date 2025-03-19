@@ -122,7 +122,7 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-heading">RESEARCH PROJECTS</h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-[#00F0FF] via-[#D946EF] to-[#FF2A6D] mx-auto"></div>
+          <div className="gradient-line"></div>
           <p className="mt-4 text-lg text-white/70 max-w-2xl mx-auto">
             Exploring the intersection of physics, machine learning, and geophysical phenomena
           </p>

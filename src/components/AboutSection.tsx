@@ -62,10 +62,10 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-heading">ABOUT ME</h2>
-          <div className="h-0.5 w-20 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto"></div>
+          <div className="gradient-line"></div>
           <p className="mt-6 text-xl text-white/80 max-w-2xl mx-auto">
-            Physicist and data scientist exploring the intersection of physics, 
-            machine learning, and geophysical research.
+            A physics graduate with a growing passion for programming and data science, 
+            eager to apply scientific principles to real-world problems.
           </p>
         </motion.div>
         
@@ -98,23 +98,23 @@ const AboutSection = () => {
               
               <div className="absolute bottom-0 left-0 p-6 z-20">
                 <h3 className="text-3xl font-bold text-white">Manoj Aryal</h3>
-                <p className="text-neon-blue text-lg mt-1">Physicist & Data Scientist</p>
+                <p className="text-neon-blue text-lg mt-1">Physics Graduate & Tech Enthusiast</p>
               </div>
             </div>
             
             <div className="p-6 space-y-6">
               <div className="space-y-4">
                 <p className="text-white/90 leading-relaxed text-lg">
-                  I am a passionate <span className="text-neon-blue font-semibold">physicist</span> and <span className="text-neon-purple font-semibold">data scientist</span> with a keen interest in the intersection of Physics, Machine Learning, and Geophysical Research.
+                  I am an enthusiastic <span className="text-neon-blue font-semibold">physics graduate</span> with a growing passion for <span className="text-neon-purple font-semibold">programming and data analysis</span>. I love exploring how technology can help us understand the world around us.
                 </p>
                 
                 <p className="text-white/90 leading-relaxed">
-                  My journey in understanding the universe began with my BSc in Physics from Tribhuvan University, where I developed a deep appreciation for how natural phenomena can be understood through mathematical and computational models.
+                  Having completed my BSc in Physics from Tribhuvan University, I'm excited to combine my physics knowledge with programming skills. I'm particularly interested in applying computational methods to solve physics problems and analyze scientific data.
                 </p>
                 
                 <div className="bg-white/5 p-4 rounded-lg border-l-2 border-neon-green">
                   <p className="text-white/90 leading-relaxed">
-                    Currently, I'm focused on pioneering research in the field of <span className="text-neon-green font-semibold">Earthquake Prediction</span> using advanced machine learning algorithms to identify patterns in seismic data.
+                    I'm currently working on an exciting project about <span className="text-neon-green font-semibold">Earthquake Data Analysis</span>, where I'm applying Python and machine learning concepts to study seismic patterns and their potential implications.
                   </p>
                 </div>
               </div>
@@ -131,7 +131,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-medium">Current Goal</h4>
-                  <p className="text-white/70">Preparing for PhD applications in Computational Geophysics</p>
+                  <p className="text-white/70">Building expertise in data science and its applications in physics</p>
                 </div>
               </motion.div>
             </div>
@@ -152,12 +152,12 @@ const AboutSection = () => {
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
               >
-                <h3 className="text-xl font-bold text-neon-blue mb-4 border-b border-white/10 pb-2">Research Focus</h3>
+                <h3 className="text-xl font-bold text-neon-blue mb-4 border-b border-white/10 pb-2">Current Focus</h3>
                 <ul className="space-y-3">
-                  {["Machine Learning for Geophysical Phenomena", 
-                    "Quantum Computing Applications in Earth Science", 
-                    "Seismic Data Analysis and Pattern Recognition", 
-                    "Neural Networks for Environmental Predictions"].map((item, i) => (
+                  {["Advanced Python Programming", 
+                    "Machine Learning Applications", 
+                    "Scientific Computing and Visualization", 
+                    "Physics-based Data Analysis"].map((item, i) => (
                     <motion.li 
                       key={i} 
                       className="flex items-start gap-3"
@@ -178,12 +178,12 @@ const AboutSection = () => {
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
               >
-                <h3 className="text-xl font-bold text-neon-purple mb-4 border-b border-white/10 pb-2">Areas of Expertise</h3>
+                <h3 className="text-xl font-bold text-neon-purple mb-4 border-b border-white/10 pb-2">Developing Skills</h3>
                 <ul className="space-y-3">
-                  {["Advanced Data Analysis and Visualization", 
-                    "Computational Physics Modeling", 
-                    "AI-driven Pattern Recognition", 
-                    "Numerical Methods for Physics Problems"].map((item, i) => (
+                  {["Data Analysis & Visualization", 
+                    "Statistical Methods in Physics", 
+                    "Computational Modeling", 
+                    "Scientific Programming"].map((item, i) => (
                     <motion.li 
                       key={i} 
                       className="flex items-start gap-3"
@@ -241,9 +241,9 @@ const AboutSection = () => {
             <Lightbulb className="w-8 h-8 text-neon-green flex-shrink-0" />
             <div>
               <p className="text-lg md:text-xl italic text-white/90">
-                "I believe the combination of physics principles with data science creates powerful tools for understanding complex systems and solving real-world problems."
+                "I believe that combining my physics education with programming skills will open up exciting opportunities to solve interesting problems and make meaningful contributions."
               </p>
-              <p className="text-right text-neon-green mt-2 text-sm">— My Research Philosophy</p>
+              <p className="text-right text-neon-green mt-2 text-sm">— My Learning Journey</p>
             </div>
           </div>
         </motion.div>
