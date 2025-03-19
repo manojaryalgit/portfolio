@@ -845,6 +845,33 @@
     background-clip: text !important;
     color: transparent !important;
   }
+
+  /* Scroll to top button styles */
+  .scroll-to-top {
+    @apply fixed bottom-8 right-8 z-50;
+    @apply p-3 rounded-full;
+    @apply bg-black/50 backdrop-blur-sm;
+    @apply border border-white/10 hover:border-[#00F0FF]/30;
+    @apply transition-all duration-300;
+    @apply shadow-lg hover:shadow-[#00F0FF]/20;
+
+    &:hover {
+      @apply transform -translate-y-1;
+    }
+
+    &:active {
+      @apply transform translate-y-0;
+    }
+  }
+
+  /* Light mode scroll to top button */
+  .light {
+    & .scroll-to-top {
+      @apply bg-white/50;
+      @apply border-gray-200/50 hover:border-blue-400/50;
+      @apply shadow-lg hover:shadow-blue-400/20;
+    }
+  }
 }
 
 @keyframes pulse {

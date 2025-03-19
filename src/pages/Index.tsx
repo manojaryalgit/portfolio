@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import NavOrbs from '@/components/NavOrbs';
@@ -11,6 +10,7 @@ import ExperienceSection from '@/components/ExperienceSection';
 import EducationSection from '@/components/EducationSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
 
 const Index = () => {
   useEffect(() => {
@@ -22,6 +22,7 @@ const Index = () => {
     <div className="min-h-screen bg-[#050113] text-white overflow-x-hidden px-0">
       <NavOrbs />
       <MobileNav />
+      <ScrollToTop />
       
       <motion.div
         initial={{ opacity: 0 }}
