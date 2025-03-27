@@ -11,8 +11,14 @@ import EducationSection from '@/components/EducationSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const Index = () => {
+  const heroRef = useScrollReveal(0.1);
+  const aboutRef = useScrollReveal(0.1);
+  const projectsRef = useScrollReveal(0.1);
+  const contactRef = useScrollReveal(0.1);
+
   useEffect(() => {
     // Set dark theme for the portfolio
     document.documentElement.classList.add('dark');
@@ -24,21 +30,41 @@ const Index = () => {
       <MobileNav />
       <ScrollToTop />
       
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="pt-16 lg:pt-24" // Add padding top to account for the fixed navigation
-      >
-        <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ExperienceSection />
-        <EducationSection />
-        <ContactSection />
-        <Footer />
-      </motion.div>
+      <main className="relative z-10">
+        {/* Hero Section */}
+        <section 
+          ref={heroRef}
+          className="section-transition min-h-screen flex items-center justify-center"
+        >
+          <HeroSection />
+        </section>
+
+        {/* About Section */}
+        <section 
+          ref={aboutRef}
+          className="section-transition reveal-on-scroll py-20"
+        >
+          <AboutSection />
+        </section>
+
+        {/* Projects Section */}
+        <section 
+          ref={projectsRef}
+          className="section-transition reveal-on-scroll py-20"
+        >
+          <ProjectsSection />
+        </section>
+
+        {/* Contact Section */}
+        <section 
+          ref={contactRef}
+          className="section-transition reveal-on-scroll py-20"
+        >
+          <ContactSection />
+        </section>
+      </main>
+
+      <Footer />
     </div>
   );
 };
