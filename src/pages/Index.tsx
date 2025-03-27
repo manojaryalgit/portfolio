@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import NavOrbs from '@/components/NavOrbs';
 import MobileNav from '@/components/MobileNav';
 import HeroSection from '@/components/HeroSection';
@@ -25,47 +25,67 @@ const Index = () => {
   }, []);
   
   return (
-    <div className="min-h-screen bg-[#050113] text-white overflow-x-hidden px-0">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="min-h-screen bg-[#050113] text-white overflow-x-hidden px-0"
+    >
       <NavOrbs />
       <MobileNav />
       <ScrollToTop />
       
       <main className="relative z-10">
         {/* Hero Section */}
-        <section 
+        <motion.section 
           ref={heroRef}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="section-transition min-h-screen flex items-center justify-center"
         >
           <HeroSection />
-        </section>
+        </motion.section>
 
         {/* About Section */}
-        <section 
+        <motion.section 
           ref={aboutRef}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="section-transition reveal-on-scroll py-20"
         >
           <AboutSection />
-        </section>
+        </motion.section>
 
         {/* Projects Section */}
-        <section 
+        <motion.section 
           ref={projectsRef}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="section-transition reveal-on-scroll py-20"
         >
           <ProjectsSection />
-        </section>
+        </motion.section>
 
         {/* Contact Section */}
-        <section 
+        <motion.section 
           ref={contactRef}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="section-transition reveal-on-scroll py-20"
         >
           <ContactSection />
-        </section>
+        </motion.section>
       </main>
 
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

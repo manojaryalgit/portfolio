@@ -60,26 +60,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scrolling for the entire website */
+/* Enhanced smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
 }
 
 /* Smooth transitions for all elements */
 * {
-  @apply transition-all duration-300 ease-in-out;
+  @apply transition-all duration-500 ease-out;
 }
 
-/* Smooth section transitions */
+/* Enhanced section transitions */
 .section-transition {
-  @apply opacity-0 translate-y-4;
-  animation: fadeInUp 0.6s ease-out forwards;
+  @apply opacity-0 translate-y-8;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -87,9 +88,9 @@ html {
   }
 }
 
-/* Smooth hover transitions */
+/* Enhanced hover transitions */
 .hover-transition {
-  @apply transition-all duration-300 ease-in-out;
+  @apply transition-all duration-500 ease-out;
 }
 
 /* Smooth scrollbar */
@@ -104,16 +105,116 @@ html {
 ::-webkit-scrollbar-thumb {
   @apply bg-gray-400/30 rounded-full;
   @apply hover:bg-gray-400/50;
+  transition: all 0.3s ease;
 }
 
-/* Smooth section reveal on scroll */
+/* Enhanced section reveal on scroll */
 .reveal-on-scroll {
-  @apply opacity-0 translate-y-4;
-  transition: all 0.6s ease-out;
+  @apply opacity-0 translate-y-8;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reveal-on-scroll.visible {
   @apply opacity-100 translate-y-0;
+}
+
+/* Enhanced component transitions */
+.component-transition {
+  @apply transition-all duration-500 ease-out;
+}
+
+/* Smooth page transitions */
+.page-transition {
+  @apply transition-all duration-700 ease-out;
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  @apply transition-all duration-500 ease-out;
+}
+
+.hover-lift:hover {
+  @apply -translate-y-1;
+}
+
+/* Smooth glass effect transitions */
+.glass {
+  @apply transition-all duration-500 ease-out;
+}
+
+/* Enhanced button transitions */
+.button-transition {
+  @apply transition-all duration-500 ease-out;
+}
+
+/* Smooth card transitions */
+.card-transition {
+  @apply transition-all duration-500 ease-out;
+}
+
+/* Enhanced navigation transitions */
+.nav-transition {
+  @apply transition-all duration-500 ease-out;
+}
+
+/* Smooth form transitions */
+.form-transition {
+  @apply transition-all duration-500 ease-out;
+}
+
+/* Enhanced footer transitions */
+.footer-transition {
+  @apply transition-all duration-500 ease-out;
+}
+
+/* Smooth mobile menu transitions */
+.mobile-menu-transition {
+  @apply transition-all duration-500 ease-out;
+}
+
+/* Enhanced scroll to top button */
+.scroll-to-top {
+  @apply fixed bottom-8 right-8 z-[100];
+  @apply p-3 rounded-full;
+  @apply bg-black/70 backdrop-blur-md;
+  @apply border border-white/20 hover:border-[#00F0FF]/50;
+  @apply transition-all duration-500 ease-out;
+  @apply shadow-lg hover:shadow-[#00F0FF]/30;
+  @apply scale-100 hover:scale-110;
+
+  &:hover {
+    @apply transform -translate-y-1;
+    @apply bg-black/80;
+  }
+
+  &:active {
+    @apply transform translate-y-0 scale-95;
+  }
+}
+
+/* Light mode scroll to top button */
+.light {
+  & .scroll-to-top {
+    @apply bg-white/90;
+    @apply border-gray-300 hover:border-blue-500/50;
+    @apply shadow-lg hover:shadow-blue-500/20;
+
+    & svg {
+      @apply text-gray-800;
+    }
+
+    &:hover {
+      @apply bg-white;
+      & svg {
+        @apply text-blue-600;
+      }
+    }
+  }
+}
+
+/* Dark mode scroll button icon color */
+.dark .scroll-to-top svg {
+  @apply text-white hover:text-[#00F0FF];
 }
 
 @layer base {
@@ -908,7 +1009,7 @@ html {
     @apply p-3 rounded-full;
     @apply bg-black/70 backdrop-blur-md;
     @apply border border-white/20 hover:border-[#00F0FF]/50;
-    @apply transition-all duration-300;
+    @apply transition-all duration-500 ease-out;
     @apply shadow-lg hover:shadow-[#00F0FF]/30;
     @apply scale-100 hover:scale-110;
 
@@ -941,11 +1042,6 @@ html {
       }
     }
   }
-}
-
-/* Dark mode scroll button icon color */
-.dark .scroll-to-top svg {
-  @apply text-white hover:text-[#00F0FF];
 }
 
 @keyframes pulse {
