@@ -212,7 +212,7 @@
       hsl(346 14.3% 4.1%) 100%
     );
   }
-
+  
   * {
     @apply border-border selection:bg-pink-500/20 selection:text-white;
   }
@@ -469,11 +469,11 @@
   .custom-scrollbar::-webkit-scrollbar {
     width: 4px;
   }
-
+  
   .custom-scrollbar::-webkit-scrollbar-track {
     background: transparent;
   }
-
+  
   .custom-scrollbar::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 20px;
@@ -836,14 +836,26 @@
   }
 
   .dark .text-gradient {
-    background: linear-gradient(to right, 
-      rgb(0, 157, 255),  /* Bright neon blue */
-      rgb(198, 0, 255),  /* Bright neon purple */
-      rgb(255, 0, 128)   /* Bright neon pink */
-    ) !important;
+    @apply bg-clip-text text-transparent;
+    background: -webkit-linear-gradient(16deg, #4285f4 0, #9b72cb 9%, #d96570 20%, #d96570 24%, #9b72cb 35%, #4285f4 44%, #9b72cb 50%, #d96570 56%, #1b1c1d 75%, #1b1c1d 100%) !important;
+    background-size: 400% 100% !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
     color: transparent !important;
+    text-shadow: none !important;
+    filter: brightness(1.2) contrast(1.1) !important;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   /* Scroll to top button styles */
